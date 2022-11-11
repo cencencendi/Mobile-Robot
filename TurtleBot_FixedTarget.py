@@ -79,6 +79,7 @@ class TurtleBot:
             pose_list.append(pose_now)
 
             if np.all(abs(pose_error)<0.04):
+                p.disconnect()
                 print(f"Position now: {pose_now}, Orientation: {orientation_now}, with orientation error = {theta_error}, and pose_error: {pose_error}")
                 # print(p.getEulerFrom(linkWorldOrientation4))
                 done = True

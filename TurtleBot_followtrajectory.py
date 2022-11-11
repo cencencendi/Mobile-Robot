@@ -78,7 +78,7 @@ class TurtleBot2:
             action_list.append([Kp*(targetVelocity+v_l), Kp*(targetVelocity+v_r)])
             orientation_list.append(orientation_now)
             pose_list.append(pose_now)
-
+        p.disconnect()
         print(f"Position now: {pose_now}, Orientation: {orientation_now}, with orientation error = {theta_error}, and pose_error: {pose_error}")
         return np.array(action_list), np.array(orientation_list), np.array(pose_list)
 
